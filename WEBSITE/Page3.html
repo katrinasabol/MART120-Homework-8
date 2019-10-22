@@ -1,0 +1,96 @@
+<html>
+<head>    
+<link rel="stylesheet" type="text/css" href="mainstyle.css">
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</head>
+        
+<style>
+a:visited {
+  color: rgb(112, 150, 255);
+}
+</style>
+
+<title> Contact Me </title>
+<span id="title"> Contact Me!</span>
+<p></p>
+    <body>
+<a href="page1.html" class="heading">Home </a>
+<p></p>
+<a href="page2.html" class="heading">Artwork & A Short Story </a>
+<p></p>
+<a href="MathGame.html" class="heading">Math Game</a>
+    </body>
+    <p></p>
+
+    <script>
+
+        function Name()
+     {
+          var answer = document.getElementById("Name").value;
+          if(answer == "")
+          {
+             // document.getElementById("finalResult").innerHTML = "Please fill in the red blanks and accept the Terms of Agreement.";
+              document.getElementById("Name").style.backgroundColor = "red";
+              document.getElementById("Name").focus();
+           }
+          else
+            {
+              document.getElementById("Name").style.backgroundColor = "white";
+               //document.getElementById("finalResult").innerHTML = "Thank you for submitting!";
+           }
+
+           var answer = document.getElementById("Email").value;
+          if(answer == "")
+          {
+              document.getElementById("Email").style.backgroundColor = "red";
+              
+    
+           }
+          else
+            {
+              document.getElementById("Email").style.backgroundColor = "white";
+              
+           }   
+         
+           var checkbox = document.getElementById("agree").checked;
+
+           if(checkbox== false)
+           {
+             window.alert("Please fill in the red blanks and accept the Terms of Agreement.");
+           }
+           else {
+            document.getElementById("finalMessage").innerHTML = "Thank you for submitting!";
+
+           }
+      }
+             
+
+
+  </script>
+
+
+<body>
+
+          <table>    
+        <tr>Name: <input type="text" id="Name"></tr>
+        <p></p>
+        <tr>Email: <input type="text" id="Email"></tr>
+          </table>
+              
+                <p></p>
+              
+
+                    <input type="checkbox" name="checkbox" value="check" id="agree" /> I agree to the Terms and Conditions
+                    <p></p>
+                    <button class="btn btn-info" id="mySubmit" type="submit" onClick="Name();">Submit</button>
+                    <span id= "finalMessage"></span>
+     </form>          
+</body>
+
+
+
+</html>

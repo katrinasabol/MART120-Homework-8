@@ -1,0 +1,91 @@
+<html>
+    <title>Math Game</title>
+
+    <link rel="stylesheet" type="text/css" href="mainstyle.css">
+    <style>
+            span{
+                font-size: 44px;
+                font-weight: bold;
+            }
+
+a:visited {
+color: rgb(112, 150, 255);
+}
+
+        </style>
+    <head>
+            <span><a style= color:slateblue;> Math Game </a></span>
+            <p></p>
+            <a href="page1.html" class="heading">Home </a>
+            <p></p>
+            <a href="page2.html" class="heading">Artwork & A Short Story  </a>
+            <p></p>
+            <a href="page3.html" class="heading">Contact Me </a>
+            <p></p>
+
+
+     <script>
+                    var actualAnswer;
+                    var number1;
+                    var number2;
+                    var counter = 0;
+                    var correct =0;
+                    var incorrect =0;
+
+                    function printQuestion()
+                    {
+                        actualAnswer = number1 + number2;
+                        document.getElementById("theQuestion").innerHTML = "What is " + number1 + "+" + number2 + "?";
+                    }
+                    function checkAnswer()
+                    {
+                        counter++;
+                        if(counter<=10)
+                        {
+
+                        
+                        var answer = document.getElementById("txtAnswer").value;
+                        if(answer == actualAnswer)
+                        {
+                            document.getElementById("finalResult").innerHTML = "Good job!";
+                            correct++;
+                            runGame();
+                        }
+                        else
+                        {
+                            document.getElementById("finalResult").innerHTML = "Try Again!";
+                            incorrect++;
+                        }
+                        }
+                        else{
+                            document.getElementById("finalResult").innerHTML = "Number correct:  " + correct + ";     Number incorrect:  " + incorrect + ";     Percentage:  " + correct / 10 *100 + "%"; 
+
+                        }
+                    }
+            
+                    function runGame()
+                    {
+                        for(var i = 0; i < 5; i++)
+                        {
+                             number1 = Math.floor(Math.random() * 10);
+                             number2 = Math.floor(Math.random() * 10);
+                        }
+                        printQuestion();
+                    }
+                </script>
+                </head>
+                <body onload="runGame();">
+                    <div id="theQuestion"></div>
+                        <table>
+                            <tr>
+                                <td>Your answer</td>
+                                <td><input type="text" id="txtAnswer"></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"><button id="btnSubmit" onClick="checkAnswer();">Submit</button></td>
+                            </tr>
+                        </table>
+                    <div id="finalResult"></div>
+                </body>
+        
+    </html>
